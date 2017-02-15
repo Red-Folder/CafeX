@@ -12,6 +12,7 @@ namespace CafeX.OrderCalculator
         public OrderCalculator()
         {
             _net = new ItemCalculator(GetMenu());
+            _surcharge = new SurchargeCalculator(GetMenu());
         }
 
         public OrderCalculator(IItemCalculator net, ISurchargeCalculator surcharge)
