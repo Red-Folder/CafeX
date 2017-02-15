@@ -7,15 +7,17 @@ namespace CafeX.OrderCalculator
     public class OrderCalculator
     {
         private IItemCalculator _net;
+        private ISurchargeCalculator _surcharge;
 
         public OrderCalculator()
         {
             _net = new ItemCalculator(GetMenu());
         }
 
-        public OrderCalculator(IItemCalculator net)
+        public OrderCalculator(IItemCalculator net, ISurchargeCalculator surcharge)
         {
             _net = net;
+            _surcharge = surcharge;
         }
 
         private IList<Item> GetMenu()
