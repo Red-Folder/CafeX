@@ -26,7 +26,7 @@ namespace CafeX.OrderCalculator.Tests
         [InlineData(new string[] { }, 0)]
         [InlineData(new string[] { "Cola" }, 0)]
         [InlineData(new string[] { "Coffee" }, 0)]
-        public void Order_Value_Is_Correct(string[] order, decimal expectedValue) 
+        public void Order_Zero_If_Drinks(string[] order, decimal expectedValue) 
         {
             var menu = new List<Item>();
             menu.Add(new Item { Name ="Cola", Price = (decimal)0.5, Category = ItemCategory.Drink, Temperature = ItemTemperature.Cold} );

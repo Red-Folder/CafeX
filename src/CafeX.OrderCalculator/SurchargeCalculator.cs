@@ -20,7 +20,7 @@ namespace CafeX.OrderCalculator
                 throw new ArgumentNullException("order");
             }
 
-            throw new NotImplementedException();
+            return 0;
         }
     }
 }
