@@ -24,7 +24,15 @@ namespace CafeX.OrderCalculator
             {
                 if (_menu.Any(x => x.Temperature == ItemTemperature.Hot && order.Contains(x.Name)))
                 {
-                    return net * (decimal)0.2;
+                    var surcharge = net * (decimal)0.2;
+                    if (surcharge > 20)
+                    {
+                        return 20;
+                    }
+                    else
+                    {
+                        return surcharge;
+                    }
                 }
                 else
                 {
