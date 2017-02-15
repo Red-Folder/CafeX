@@ -22,7 +22,7 @@ namespace CafeX.OrderCalculator
 
             if (_menu.Any(x => x.Category == ItemCategory.Food && order.Contains(x.Name)))
             {
-                return net * (decimal)0.1;
+                return Math.Ceiling((net * (decimal)0.1) * 100)/ 100.0M;
             }
             else
             {
