@@ -21,5 +21,17 @@ namespace CafeX.OrderCalculator.Tests
 
             Assert.Equal((decimal)133.45, result);
         }
+
+        [Fact]
+        // Normally would split out into a separate project
+        public void Returns_Correct_Value_Implementation()
+        {
+            var sut = new OrderCalculator();
+
+            var result = sut.Calculate(new string[] { "Steak Sandwich" });
+
+            Assert.Equal((decimal)5.4, result);
+        }
+
     }
 }
