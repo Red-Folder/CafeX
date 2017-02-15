@@ -32,7 +32,7 @@ namespace CafeX.OrderCalculator
 
         public decimal Calculate(string[] order)
         {
-            throw new NotImplementedException();
+            return _net.Calculate(order);
         }
     }
 }
