@@ -34,7 +34,12 @@ namespace CafeX.OrderCalculator
 
         public decimal Calculate(string[] order)
         {
-            return _net.Calculate(order);
+            var result = (decimal)0;
+            
+            result += _net.Calculate(order);
+            result += _surcharge.Calculate(result, order);
+
+            return result;
         }
     }
 }
