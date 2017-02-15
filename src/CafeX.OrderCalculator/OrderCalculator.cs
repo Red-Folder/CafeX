@@ -6,7 +6,12 @@ namespace CafeX.OrderCalculator
     {
         public decimal Calculate(string[] order)
         {
-            throw new NotImplementedException();
+            if (order == null)
+            {
+                throw new ArgumentNullException("order");
+            }
+
+            return 0;
         }
     }
 }
