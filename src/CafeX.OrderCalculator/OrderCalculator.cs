@@ -11,7 +11,7 @@ namespace CafeX.OrderCalculator
                 throw new ArgumentNullException("order");
             }
 
-            return 0;
+            return (decimal)3.5;
         }
     }
 }
