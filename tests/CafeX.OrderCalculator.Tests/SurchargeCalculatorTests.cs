@@ -53,7 +53,7 @@ namespace CafeX.OrderCalculator.Tests
 
             var sut = new SurchargeCalculator(menu);
 
-            var result = sut.Calculate(0, order);
+            var result = sut.Calculate(10, order);
 
             Assert.Equal(expectedValue, result);
         }

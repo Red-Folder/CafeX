@@ -20,7 +20,14 @@ namespace CafeX.OrderCalculator
                 throw new ArgumentNullException("order");
             }
 
-            return 0;
+            if (_menu.Any(x => x.Category == ItemCategory.Food && order.Contains(x.Name)))
+            {
+                return net * (decimal)0.1;
+            }
+            else
+            {
+                return 0;
+            }
         }
     }
 }
