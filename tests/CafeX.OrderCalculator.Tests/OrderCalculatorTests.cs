@@ -15,14 +15,21 @@ namespace CafeX.OrderCalculator.Tests
             Assert.Equal("order", ex.ParamName);
         }
 
-        [Fact]
-        public void Order_Value_Is_Correct() 
+        [Theory]
+        [InlineData(new string[] { }, 0)]
+        [InlineData(new string[] { "Cola" }, 0.5)]
+        [InlineData(new string[] { "Coffee" }, 1)]
+        [InlineData(new string[] { "Cheese Sandwich" }, 2)]
+        [InlineData(new string[] { "Steak Sandwich" }, 4.5)]
+        [InlineData(new string[] { "Cola", "Coffee" }, 1.5)]
+        [InlineData(new string[] { "Cola", "Coffee", "Cheese Sandwich" }, 3.5)]
+        public void Order_Value_Is_Correct(string[] order, decimal expectedValue) 
         {
             var sut = new OrderCalculator();
 
-            var result = sut.Calculate(new string[] { "Cola", "Coffee", "Cheese Sandwich" });
+            var result = sut.Calculate(order);
 
-            Assert.Equal((decimal)3.5, result);
+            Assert.Equal(expectedValue, result);
         }
     }
 }
